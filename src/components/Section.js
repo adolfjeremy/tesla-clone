@@ -16,7 +16,6 @@ function Section({
         <h1>{title}</h1>
         {description && <p>{description}</p>}
       </ItemText>
-
       <Buttons>
         <ButtonGroup>
           <LeftButton href={"/"}>{leftButtonText}</LeftButton>

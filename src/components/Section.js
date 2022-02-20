@@ -16,10 +16,13 @@ function Section({
         <h1>{title}</h1>
         {description && <p>{description}</p>}
       </ItemText>
+
       <Buttons>
         <ButtonGroup>
-          <LeftButton>{leftButtonText}</LeftButton>
-          {RightButtonText && <RightButton>{RightButtonText}</RightButton>}
+          <LeftButton href={"/"}>{leftButtonText}</LeftButton>
+          {RightButtonText && (
+            <RightButton href={"/"}>{RightButtonText}</RightButton>
+          )}
         </ButtonGroup>
         {isArrowButton && <DownArrow src={DownArrowImage} />}
       </Buttons>
@@ -27,7 +30,7 @@ function Section({
   );
 }
 
-const Wrap = styled.div`
+const Wrap = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,6 +46,17 @@ const Wrap = styled.div`
 const ItemText = styled.div`
   padding-top: 15vh;
   text-align: center;
+  h1 {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 48px;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    padding: 6px 24px 16px;
+  }
 `;
 
 const Buttons = styled.div``;
@@ -57,7 +71,7 @@ const ButtonGroup = styled.div`
   }
 `;
 
-const LeftButton = styled.div`
+const LeftButton = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,6 +98,7 @@ const DownArrow = styled.img`
   margin-top: 12px;
   height: 40px;
   animation: animateDown infinite 1.5s;
+  cursor: pointer;
 `;
 
 export default Section;

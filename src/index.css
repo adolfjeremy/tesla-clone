@@ -12,6 +12,15 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  position: relative;
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+}
+
 @keyframes animateDown {
   0%,
   20%,
